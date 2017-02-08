@@ -1,0 +1,19 @@
+student-sql:
+  image: mysql:5.7
+  environment:
+    - MYSQL_ROOT_PASSWORD=rezaul
+    - MYSQL_DATABASE=studentdb
+    - MYSQL_USER=rezaul
+    - MYSQL_PASSWORD=skytech09
+  ports:
+      - "3333:3306"
+  volumes:
+      - /storage/docker/mysqldb-data:/var/lib/mysql
+
+studentapp:
+  image: rezaulalam/studentship
+  links:
+    - student-sql:mysql
+  ports:
+    - 80:9900
+
