@@ -6,7 +6,7 @@ student-sql:
     - MYSQL_USER=rezaul
     - MYSQL_PASSWORD=skytech09
   ports:
-      - "3333:3306"
+      - "3306:3306"
   volumes:
       - /storage/docker/mysqldb-data:/var/lib/mysql
 
